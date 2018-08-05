@@ -11,15 +11,31 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
+            // tiedostoon kirjoittaminen
+            string tiedosto = @"C:\Users\maria\OneDrive\Asiakirjat\harjoitus\Lämpötila.txt";
 
+            //luetaan tiedostotsta aiemmin asetettu lämpötila
+
+            if (File.Exists(tiedosto))
+
+            {
+                string aiempiArvo = File.ReadAllText(tiedosto);
+                Console.WriteLine("Aiemmin asetettu lämpötila on " + aiempiArvo + " astetta");
+
+            }
+
+            else
+            {
+                Console.WriteLine("Tervetuloa!");
+
+            }
 
             int lämpötila = 0;
             Console.Write("Anna uusi lämpätila: ");
             string syöte = Console.ReadLine();
             lämpötila = int.Parse(syöte);
 
-            // tiedostoon kirjoittaminen
-            string tiedosto = @"C:\Users\maria\OneDrive\Asiakirjat\harjoitus\Lämpötila.txt";
+
 
             // C-kielit katsovat kenoviivan erikoismerkiksi, joten toimiakseen kenomerkki tulee laittaa tuplana tai alkuun @-merkki
 
